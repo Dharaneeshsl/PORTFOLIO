@@ -56,19 +56,11 @@ app.post('/api/contact', async (req, res) => {
           pass: process.env.SMTP_PASS,
         },
       });
-      // Notify site owner
       await transporter.sendMail({
         from: process.env.SMTP_USER,
         to: process.env.CONTACT_EMAIL,
         subject: 'New Portfolio Contact',
         text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
-      });
-      // Confirmation email to user
-      await transporter.sendMail({
-        from: process.env.SMTP_USER,
-        to: email,
-        subject: 'Thank you for contacting me!',
-        text: `Hi ${name},\n\nThank you for reaching out! I have received your message and will get back to you soon.\n\nBest regards,\n[Your Name]`,
       });
     }
     res.json({ success: true });
@@ -86,15 +78,6 @@ app.get('/api/github/:username', async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch GitHub activity' });
   }
-});
-
-// Admin dashboard route (protected)
-app.get('/api/admin/messages', (req, res) => {
-  const token = req.headers['x-admin-token'];
-  if (!process.env.ADMIN_TOKEN || token !== process.env.ADMIN_TOKEN) {
-    return res.status(401).json({ error: 'Unauthorized' });
-  }
-  Contact.find().sort({ date: -1 }).then(messages => res.json(messages)).catch(() => res.status(500).json({ error: 'Failed to fetch messages' }));
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`)); 

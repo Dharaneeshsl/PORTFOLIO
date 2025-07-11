@@ -1,5 +1,5 @@
 // API utility for portfolio backend
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://portfolio-wqld.onrender.com/api';
 
 export async function sendContact(form) {
   const res = await fetch(`${API_BASE}/contact`, {
