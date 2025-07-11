@@ -9,7 +9,7 @@ export default function About() {
       </div>
       <div className="max-w-xl text-center md:text-left">
         <h2 className="text-3xl font-bold mb-4 text-white">About Me</h2>
-        <p className="text-subtext text-lg">I am a passionate full stack web developer with experience in building high-quality, scalable web applications using the latest technologies. I love solving problems, learning new things, and collaborating with others to create impactful digital experiences.</p>
+        <p className="text-subtext text-lg">I am a passionate Mern stack web developer building high-quality, scalable web applications using the latest technologies. I love solving problems, learning new things, and collaborating with others to create impactful digital experiences.</p>
       </div>
     </section>
   );

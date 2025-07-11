@@ -4,7 +4,7 @@ import { fetchGithubActivity } from '../api';
 const projects = [
   {
     title: 'Project One',
-    description: 'A modern web app for managing tasks efficiently.',
+    description: 'A modern web app for managing tasks (TODO LIST) efficiently.',
     tech: ['React', 'Node.js', 'MongoDB'],
     github: '#',
     demo: '#',

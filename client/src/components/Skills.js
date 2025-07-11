@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaDatabase, FaGitAlt, FaFigma, FaVial } from 'react-icons/fa';
-import { SiTailwindcss, SiExpress, SiMongodb, SiPostgresql, SiMysql, SiPostman, SiGraphql, SiVisualstudiocode } from 'react-icons/si';
+import { SiTailwindcss, SiExpress, SiMongodb, SiPostgresql, SiMysql, SiPostman, SiGraphql } from 'react-icons/si';
 
 const skills = [
   {
@@ -34,7 +34,6 @@ const skills = [
     category: 'Tools',
     items: [
       { name: 'Git', icon: <FaGitAlt className="text-accent" /> },
-      { name: 'VS Code', icon: <SiVisualstudiocode className="text-accent" /> },
       { name: 'Figma', icon: <FaFigma className="text-accent" /> },
       { name: 'Postman', icon: <SiPostman className="text-accent" /> },
     ],
