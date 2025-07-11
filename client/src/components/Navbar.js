@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full z-50 bg-background bg-opacity-80 backdrop-blur-lg shadow-glass">
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        <span className="text-2xl font-bold tracking-widest text-accent">YourName</span>
+        <span className="text-2xl font-bold tracking-widest text-accent">Portfolio</span>
         <ul className="hidden md:flex space-x-8">
           {navLinks.map(link => (
             <li key={link.name}>
