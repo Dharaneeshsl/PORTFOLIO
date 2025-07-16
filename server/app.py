@@ -4,11 +4,13 @@ from flask_cors import CORS
 import os
 
 app = Flask(__name__)
+# Allow CORS for all relevant frontend and backend URLs (local, Vercel, all Render backends)
 CORS(app, resources={r"/*": {"origins": [
     "http://localhost:3000",  # Local React dev server
-    "https://portfolio-0dtw.onrender.com",  # Render frontend
-    "https://portfolio-1-ggqn.onrender.com",  # Alternate Render frontend
-    "https://portfolio-nine-iota-11.vercel.app"  # Vercel frontend
+    "https://portfolio-nine-iota-11.vercel.app",  # Vercel frontend (production)
+    "https://portfolio-0dtw.onrender.com",  # Render backend 1
+    "https://portfolio-1-ggqn.onrender.com",  # Render backend 2
+    "https://portfolio-wqld.onrender.com"  # Render backend 3 (API proxy)
 ]}}, supports_credentials=True)
 
 
