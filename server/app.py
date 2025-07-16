@@ -4,7 +4,11 @@ from flask_cors import CORS
 import os
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+CORS(app, resources={r"/*": {"origins": [
+    "http://localhost:3000",  # Local React dev server
+    "https://your-frontend.onrender.com"  # Replace with your actual deployed frontend URL
+]}}, supports_credentials=True)
+
 
 # Configure Flask-Mail
 app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')
