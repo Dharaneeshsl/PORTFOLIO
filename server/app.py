@@ -13,6 +13,10 @@ app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD', 'your_app_password
 
 mail = Mail(app)
 
+@app.route('/')
+def health():
+    return 'Backend is running!', 200
+
 @app.route('/send_mail', methods=['POST'])
 def send_mail():
     data = request.get_json(force=True)
