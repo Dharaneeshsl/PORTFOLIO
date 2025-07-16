@@ -2,8 +2,8 @@
 const API_BASE = 'https://portfolio-wqld.onrender.com/api';
 
 export async function sendContact(form) {
-  // Use Render backend for sending email
-  const res = await fetch('https://portfolio-1-ggqn.onrender.com/send_mail', {
+  // Use local Flask backend for sending email during development
+  const res = await fetch('http://localhost:5000/send_mail', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -15,6 +15,7 @@ export async function sendContact(form) {
   if (!res.ok) throw new Error((await res.json()).message || 'Failed to send');
   return res.json();
 }
+
 
 export async function fetchGithubActivity(username) {
   const res = await fetch(`${API_BASE}/github/${username}`);
