@@ -14,11 +14,15 @@ app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD', 'your_app_password
 
 mail = Mail(app)
 
-CORS(app, origins=["https://portfolio-nine-iota-11.vercel.app"], supports_credentials=True, allow_headers="*", methods=["GET", "POST", "OPTIONS"])
+CORS(app, origins="*", allow_headers="*", supports_credentials=True, methods=["GET", "POST", "OPTIONS"])
 
 @app.route('/')
 def health():
     return 'Backend is running!', 200
+
+@app.route('/send_mail', methods=['OPTIONS'])
+def send_mail_options():
+    return '', 204
 
 @app.route('/send_mail', methods=['POST'])
 def send_mail():
