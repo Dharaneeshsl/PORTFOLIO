@@ -2,12 +2,17 @@
 const API_BASE = 'https://portfolio-wqld.onrender.com/api';
 
 export async function sendContact(form) {
-  const res = await fetch(`${API_BASE}/contact`, {
+  // Use Flask backend for sending email
+  const res = await fetch('http://localhost:5000/send_mail', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(form),
+    body: JSON.stringify({
+      subject: `Portfolio Contact from ${form.name}`,
+      sender: form.email,
+      message: form.message
+    }),
   });
-  if (!res.ok) throw new Error((await res.json()).error || 'Failed to send');
+  if (!res.ok) throw new Error((await res.json()).message || 'Failed to send');
   return res.json();
 }
 
