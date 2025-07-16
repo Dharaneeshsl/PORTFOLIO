@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": [
     "http://localhost:3000",  # Local React dev server
-    "https://your-frontend.onrender.com"  # Replace with your actual deployed frontend URL
+    "https://portfolio-0dtw.onrender.com"  # Actual deployed frontend URL
 ]}}, supports_credentials=True)
 
 
