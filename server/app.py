@@ -14,7 +14,7 @@ app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD', 'your_app_password
 
 mail = Mail(app)
 
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "https://portfolio-nine-iota-11.vercel.app"}})
 
 @app.route('/')
 def health():
