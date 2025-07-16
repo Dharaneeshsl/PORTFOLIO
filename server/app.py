@@ -15,7 +15,7 @@ mail = Mail(app)
 
 @app.route('/send_mail', methods=['POST'])
 def send_mail():
-    data = request.json
+    data = request.get_json(force=True)
     subject = data.get('subject')
     sender = data.get('sender')
     message_body = data.get('message')
