@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_mail import Mail, Message
 import os
+from flask_cors import CORS
 
 app = Flask(__name__)
 
@@ -12,6 +13,8 @@ app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME', 'your_email@gmail.
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD', 'your_app_password')  # Use App Password for Gmail
 
 mail = Mail(app)
+
+CORS(app)
 
 @app.route('/')
 def health():
