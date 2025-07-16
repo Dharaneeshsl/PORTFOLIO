@@ -1,31 +1,28 @@
 from flask import Flask, request, jsonify
 from flask_mail import Mail, Message
-import os
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
+CORS(app, origins="*", allow_headers="*", supports_credentials=True, methods=["GET", "POST", "OPTIONS"])
 
-# Configure Flask-Mail (replace with your actual credentials or use environment variables)
+# Configure Flask-Mail
 app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')
 app.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT', 587))
 app.config['MAIL_USE_TLS'] = os.environ.get('MAIL_USE_TLS', 'true').lower() == 'true'
 app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME', 'your_email@gmail.com')
-app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD', 'your_app_password')  # Use App Password for Gmail
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD', 'your_app_password')
 
 mail = Mail(app)
-
-CORS(app, origins="*", allow_headers="*", supports_credentials=True, methods=["GET", "POST", "OPTIONS"])
 
 @app.route('/')
 def health():
     return 'Backend is running!', 200
 
-@app.route('/send_mail', methods=['OPTIONS'])
-def send_mail_options():
-    return '', 204
-
-@app.route('/send_mail', methods=['POST'])
+@app.route('/send_mail', methods=['POST', 'OPTIONS'])
 def send_mail():
+    if request.method == 'OPTIONS':
+        return '', 204
     data = request.get_json(force=True)
     subject = data.get('subject')
     sender = data.get('sender')
@@ -33,7 +30,7 @@ def send_mail():
 
     msg = Message(subject=subject,
                   sender=sender,
-                  recipients=[os.environ.get('RECIPIENT_EMAIL', app.config['MAIL_USERNAME'])],  # Where you want to receive the mail
+                  recipients=[os.environ.get('RECIPIENT_EMAIL', app.config['MAIL_USERNAME'])],
                   body=message_body)
     try:
         mail.send(msg)
