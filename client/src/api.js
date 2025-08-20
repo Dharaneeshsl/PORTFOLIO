@@ -6,7 +6,7 @@ export async function sendContact(form) {
   const backendUrl =
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:5000/send_mail'
-      : 'https://portfolio-1-ggqn.onrender.com/send_mail'; // Update to your deployed backend
+      : 'https://portfolio-wqld.onrender.com/send_mail';
   const res = await fetch(backendUrl, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
