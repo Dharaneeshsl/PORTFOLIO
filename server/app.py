@@ -18,12 +18,12 @@ CORS(
 )
 
 
-# Configure Flask-Mail
-app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')
+# Configure Flask-Mail with Brevo SMTP
+app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER', 'smtp-relay.brevo.com')
 app.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT', 587))
 app.config['MAIL_USE_TLS'] = os.environ.get('MAIL_USE_TLS', 'true').lower() == 'true'
-app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME', 'your_email@gmail.com')
-app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD', 'your_app_password')
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME', '924bfd001@smtp-brevo.com')
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD', 'qD9yhbOPrdHKSWGU')
 
 mail = Mail(app)
 
