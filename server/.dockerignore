@@ -1,0 +1,21 @@
+# Ignore files not needed in the Docker image
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtualenvs
+.venv/
+venv/
+
+# Local env files
+.env
+*.env
+
+# VCS
+.git
+.gitignore
+
+# Node artifacts if any
+node_modules/
+**/node_modules/
