@@ -7,26 +7,38 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#0f0f0f',
-        accent: '#00ffe7', // Neon blue/teal accent
+        background: '#050505', // Deep black for premium feel
+        'glass-bg': 'rgba(255, 255, 255, 0.05)',
+        'glass-border': 'rgba(255, 255, 255, 0.1)',
+        accent: '#00f2ea', // Cyan
+        'neon-purple': '#b026ff',
         text: '#ffffff',
-        subtext: '#cccccc',
+        subtext: '#a1a1aa',
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+        heading: ['Outfit', 'sans-serif'],
         mono: ['Fira Mono', 'ui-monospace', 'SFMono-Regular'],
       },
       boxShadow: {
-        glass: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-        neon: '0 0 8px #00ffe7, 0 0 16px #00ffe7',
+        glass: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+        neon: '0 0 10px rgba(0, 242, 234, 0.5), 0 0 20px rgba(0, 242, 234, 0.3)',
+        'neon-purple': '0 0 10px rgba(176, 38, 255, 0.5), 0 0 20px rgba(176, 38, 255, 0.3)',
       },
-      borderRadius: {
-        glass: '1.5rem',
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
-      height: {
-        'screen-minus-navbar': 'calc(100vh - 64px)', // Adjust 64px if navbar height changes
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        }
+      }
     },
   },
   plugins: [],
-}; 
+};

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -9,15 +9,10 @@ import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AdminDashboard from './components/AdminDashboard';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import ParticlesBackground from './components/ParticlesBackground';
 import { AnimatePresence, motion } from 'framer-motion';
 
 function App() {
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
   return (
     <BrowserRouter>
       <Routes>
