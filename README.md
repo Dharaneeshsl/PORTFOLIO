@@ -4,22 +4,6 @@ Containerized full-stack portfolio (React client + Flask server).
 
 ## Prerequisites
 - Docker and Docker Compose
-
-## Setup env (email)
-Create `server/.env` with your Gmail SMTP app password:
-
-```
-MAIL_SERVER=smtp.gmail.com
-MAIL_PORT=587
-MAIL_USE_TLS=true
-MAIL_USERNAME=<your_gmail>
-MAIL_PASSWORD=<your_app_password>
-MAIL_DEFAULT_SENDER=<your_gmail>
-RECIPIENT_EMAIL=<recipient_email>
-```
-
-Note: `.env` is gitignored and not committed.
-
 ## Run with Docker Compose
 
 ```
