@@ -1,4 +1,3 @@
-// API utility for portfolio backend
 const API_BASE = process.env.REACT_APP_API_URL || 'https://portfolio-wqld.onrender.com/api';
 
 export async function sendContact(form) {
@@ -8,7 +7,8 @@ export async function sendContact(form) {
     body: JSON.stringify({
       subject: `Portfolio Contact from ${form.name}`,
       sender: form.email,
-      message: form.message
+      message: form.message,
+      honeypot: form.honeypot || ''
     }),
   });
   if (!res.ok) throw new Error((await res.json()).message || 'Failed to send');
