@@ -1,0 +1,8 @@
+{
+  "projectId": "10951f8d-a57b-40da-a099-ba7c8e81b5ca",
+  "createdAt": 1768808675312,
+  "startupCommands": [
+    "cd client && set BROWSER=none && npm start",
+    "cd server && npm run dev"
+  ]
+}
