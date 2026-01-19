@@ -166,7 +166,7 @@ const projects = [
   }
 ];
 
-const GITHUB_USERNAME = 'octocat'; // Replace with your GitHub username
+const GITHUB_USERNAME = 'Dharaneeshsl'; // Replace with your GitHub username
 
 export default function Projects() {
   const [activity, setActivity] = useState([]);
@@ -212,10 +212,16 @@ export default function Projects() {
         {/* GitHub Activity Section */}
         <div className="mt-16">
           <h3 className="text-2xl font-bold text-accent mb-4 text-center">Recent GitHub Activity</h3>
-          {loading && <div className="text-subtext text-center">Loading...</div>}
+          {loading && (
+            <div className="space-y-4 animate-pulse">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="bg-black bg-opacity-30 rounded-glass shadow-glass p-4 h-16 w-full"></div>
+              ))}
+            </div>
+          )}
           {error && <div className="text-red-500 text-center">{error}</div>}
           <ul className="space-y-4">
-            {activity.map((event) => (
+            {!loading && activity.map((event) => (
               <li key={event.id} className="bg-black bg-opacity-30 rounded-glass shadow-glass p-4" data-aos="fade-up">
                 <span className="text-white font-semibold">{event.type.replace('Event', '')}</span>{' '}
                 <span className="text-subtext">at</span>{' '}
