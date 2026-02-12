@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaGitAlt, FaFigma, FaVial, FaPython, FaDocker, FaAws } from 'react-icons/fa';
+import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaGitAlt, FaFigma, FaPython, FaDocker, FaAws } from 'react-icons/fa';
 import { SiTailwindcss, SiExpress, SiMongodb, SiPostgresql, SiMysql, SiPostman, SiGraphql, SiTensorflow, SiPytorch, SiPandas, SiNumpy, SiScikitlearn, SiAdobexd, SiCanva, SiFlutter, SiDart, SiFirebase } from 'react-icons/si';
 import { motion } from 'framer-motion';
 
