@@ -1,4 +1,4 @@
-const API_BASE = process.env.REACT_APP_API_URL || 'https://portfolio-wqld.onrender.com/api';
+const API_BASE = '/api';
 
 export async function sendContact(form) {
   const res = await fetch(`${API_BASE}/send_mail`, {

@@ -1,0 +1,51 @@
+name: Frontend CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'client/**'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'client/**'
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    name: Build & Verify
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: ./client
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: client/package-lock.json
+
+    - name: Install Dependencies
+      run: npm ci
+
+    - name: Run Build
+      # CI=false prevents treating warnings as errors, ensuring the build completes even with minor warnings
+      run: npm run build
+      env:
+        CI: false
+
+    - name: Create Production Build Artifact
+      if: matrix.node-version == '20.x'
+      uses: actions/upload-artifact@v4
+      with:
+        name: production-build
+        path: client/build
