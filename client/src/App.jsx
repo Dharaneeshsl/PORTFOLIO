@@ -5,8 +5,11 @@ import Home from './components/Home';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Internships from './components/Internships';
+import Leadership from './components/Leadership';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
+import Achievements from './components/Achievements';
 import Footer from './components/Footer';
 import ErrorBoundary from './components/ErrorBoundary';
 import AOS from 'aos';
@@ -51,8 +54,11 @@ function App() {
                     <section id="about"><About /></section>
                     <section id="skills"><Skills /></section>
                     <section id="projects"><Projects /></section>
+                    <section id="internships"><Internships /></section>
+                    <section id="leadership"><Leadership /></section>
                     <section id="resume"><Resume /></section>
                     <section id="contact"><Contact /></section>
+                    <section id="achievements"><Achievements /></section>
                   </main>
                   <Footer />
                 </motion.div>

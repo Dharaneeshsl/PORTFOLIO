@@ -28,6 +28,7 @@ export default function ParticlesBackground() {
     const ctx = canvas.getContext('2d');
     let width = window.innerWidth;
     let height = window.innerHeight;
+    let animationFrameId;
     canvas.width = width;
     canvas.height = height;
     particles.current = Array.from({ length: PARTICLE_COUNT }, () => createParticle(width, height));
@@ -49,7 +50,7 @@ export default function ParticlesBackground() {
         if (p.x < 0 || p.x > width) p.dx *= -1;
         if (p.y < 0 || p.y > height) p.dy *= -1;
       }
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     }
     animate();
     function handleResize() {
@@ -60,7 +61,10 @@ export default function ParticlesBackground() {
       particles.current = Array.from({ length: PARTICLE_COUNT }, () => createParticle(width, height));
     }
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      cancelAnimationFrame(animationFrameId);
+    };
   }, []);
 
   return (

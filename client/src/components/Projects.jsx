@@ -29,116 +29,94 @@ const contributions = [
 
 const projects = [
   {
-    title: 'LoveGhost-n8n - AI Automation',
-    description: 'A fully automated n8n workflow that generates unique, heartwarming daily messages for your grandma using OpenAI and sends them via email. This project combines AI, automation, and personal care — making grandma feel loved every single day! ❤️',
-    tech: ['n8n', 'OpenAI', 'Automation', 'JSON', 'SMTP'],
-    github: 'https://github.com/Dharaneeshsl/LoveGhost-n8n',
-    demo: ''
+    id: 1,
+    title: "neXus — Complete CTF Platform",
+    description: "End-to-end Capture-The-Flag platform built for INFINITUM 2026, EYE Club PSG TECH. Features OTP-based authentication, multi-round competitive event flow, real-time code execution against test cases, and puzzle-based challenges across 3 rounds.",
+    badge: "Built for INFINITUM 2026 • EYE Club, PSG TECH",
+    techStack: ["React", "Node.js", "Express", "MongoDB", "OTP Auth", "Real-time Code Execution"],
+    github: "https://github.com/Dharaneeshsl",
+    live: "",
   },
   {
-    title: 'SentinelCharge-n8n - Battery Guardian',
-    description: 'A local-first laptop safety automation that monitors battery status, kills heavy apps during low battery events, sends mobile alerts, and logs everything for analysis. Powered by Node.js + n8n to ensure your workspace remains safe and efficient.',
-    tech: ['n8n', 'Node.js', 'Automation', 'System Design', 'Webhooks'],
-    github: 'https://github.com/Dharaneeshsl/SentinelCharge-n8n',
-    demo: ''
+    id: 2,
+    title: "Live Satellite Communication Globe",
+    description: "Real-time 3D simulator of a satellite network using live TLE data. Implemented orbit propagation, WebSocket streaming, and latency-based link visualization for scalable real-time systems.",
+    badge: "Real-time • 3D • WebSocket",
+    techStack: ["React", "FastAPI", "WebSocket", "TLE Data", "Three.js", "Python"],
+    github: "https://github.com/Dharaneeshsl",
+    live: "",
   },
   {
-    title: 'Educational Keylogger - Cybersecurity',
-    description: 'A Python-based keylogger demonstration designed solely for educational purposes and ethical hacking awareness. This project helps cybersecurity enthusiasts understand the mechanics of keystroke logging, system monitoring, and potential vulnerability vectors.',
-    tech: ['Python', 'Cybersecurity', 'Ethical Hacking', 'System Monitoring'],
-    github: 'https://github.com/Dharaneeshsl/KEYLOGGER-DEMONSTRATION',
-    demo: ''
+    id: 3,
+    title: "PhishX — Real-Time Phishing Detection",
+    description: "ML-powered system to classify phishing URLs, emails, and webpage content. Deployed as a Manifest V3 Chrome Extension for real-time browser-level threat prevention.",
+    badge: "Chrome Extension • Manifest V3 • ML",
+    techStack: ["Python", "Machine Learning", "Chrome Extension API", "Manifest V3", "Flask"],
+    github: "https://github.com/Dharaneeshsl",
+    live: "",
   },
   {
-    title: 'E-commerce Website',
-    description: 'A full-stack e-commerce website built with React, Node.js, Express, and MongoDB. Features include user authentication, product management, shopping cart, payment processing, and order management. The UI is modern, responsive, and mobile-friendly, with secure checkout and order tracking.',
-    tech: ['React', 'React Router', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB', 'Stripe'],
-    github: 'https://github.com/Dharaneeshsl/Ecommerce-site',
-    demo: 'https://ecommerce-site-omega-gules.vercel.app/'
+    id: 4,
+    title: "DebugIQ — AI-Assisted Log Analysis Platform",
+    description: "End-to-end log intelligence platform that ingests raw simulation logs, extracts failures with context, deduplicates repeated issues, clusters related failures, and ranks them by severity and module impact for fast triage.",
+    badge: "AI • Log Intelligence • Clustering",
+    techStack: ["Python", "AI/ML", "Log Processing", "Clustering", "Severity Ranking"],
+    github: "https://github.com/Dharaneeshsl",
+    live: "",
   },
   {
+    id: 5,
+    title: "LoveGhost-n8n — AI Automation",
+    description: "A fully automated n8n workflow that generates unique, heartwarming daily messages for your grandma using OpenAI. The project combines AI, automation, and JSON to automate everything.",
+    badge: "AI • Automation • n8n",
+    techStack: ["n8n", "OpenAI", "Automation", "JSON"],
+    github: "https://github.com/Dharaneeshsl",
+    live: "",
+  },
+  {
+    id: 6,
+    title: "SentinelCharge-n8n — Battery Guardian",
+    description: "An n8n automation that monitors battery status, triggers alerts during charging, and logs everything for analysis. Powered by automated workflows and system design.",
+    badge: "n8n • Automation • System Design",
+    techStack: ["n8n", "Automation", "System Design", "Webhooks"],
+    github: "https://github.com/Dharaneeshsl",
+    live: "",
+  },
+  {
+    id: 7,
+    title: "Educational Keylogger — Cybersecurity",
+    description: "A Python-based educational keylogger demonstration designed for educational purposes and cybersecurity awareness. Helps cybersecurity enthusiasts understand threat vectors and ethical hacking fundamentals.",
+    badge: "Cybersecurity • Ethical Hacking • Python",
+    techStack: ["Python", "Cybersecurity", "System Monitoring", "Ethical Hacking"],
+    github: "https://github.com/Dharaneeshsl",
+    live: "",
+  },
+  {
+    id: 8,
+    title: "CSEA Event Portal — Stranger Things Themed",
+    description: "Multi-round competitive event platform built for PSG Tech's CS association. Features OTP auth, real-time code execution with test cases, and puzzle-based challenges across 3 rounds.",
+    badge: "PSG Tech • CSEA • Real Event",
+    techStack: ["React", "Node.js", "Express", "MongoDB", "OTP Auth"],
+    github: "https://github.com/Dharaneeshsl",
+    live: "",
+  },
+  {
+    id: 9,
+    title: "E-Commerce Website",
+    description: "A fully automated site workflow with React, Firebase, Express, and MongoDB. Features include authentication, product management, shopping cart, payment integration, and admin dashboard.",
+    badge: "Full Stack • MERN",
+    techStack: ["React", "Node.js", "Firebase", "Express", "MongoDB", "Tailwind CSS"],
+    github: "https://github.com/Dharaneeshsl",
+    live: "",
+  },
+  {
+    id: 10,
     title: "Dharaneesh's Delivery Company",
-    description: "A modern, full-stack delivery management application with a Flutter frontend and Node.js backend. Features include real-time delivery tracking, Google Maps integration, push notifications, multi-role user management (Customer, Driver, Admin), secure authentication, and comprehensive delivery analytics. Supports iOS, Android, and Web.",
-    tech: ['Flutter', 'Dart', 'Node.js', 'Express', 'Google Maps API', 'Firebase', 'Cloudinary', 'MongoDB'],
-    github: 'https://github.com/Dharaneeshsl/Dharaneesh-s-Delivery-Company',
-    demo: ''
-  },
-  {
-    title: 'Event Management - Eventify',
-    description: 'A comprehensive event management platform enabling users to create, manage, and participate in events. Features include event creation, registration, ticketing, real-time updates, notifications, and an intuitive dashboard for organizers and attendees. Built with a modern tech stack for scalability and user experience.',
-    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'Tailwind CSS', 'JWT', 'Cloudinary'],
-    github: 'https://github.com/Dharaneeshsl/EVENT-MANAGEMENT-EVENTIFY',
-    demo: ''
-  },
-  {
-    title: 'TIN DOG - Dog Dating Application',
-    description: 'A complete full-stack dog dating application built with HTML, CSS, and JavaScript. Simulates a Tinder-like experience for dogs to find their perfect match! Features include user authentication, dog profile management, swipe interface, matches dashboard, messaging system, and a modern responsive design.',
-    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'Bootstrap 5', 'Font Awesome', 'Local Storage'],
-    github: 'https://github.com/Dharaneeshsl/TIN-DOG-PROJECT',
-    demo: ''
-  },
-  {
-    title: 'Responsive Resume',
-    description: 'A clean and modern responsive resume website built with HTML and CSS. Showcases professional experience, education, and skills in a visually appealing and mobile-friendly layout. Easy to customize and deploy for personal branding.',
-    tech: ['HTML5', 'CSS3', 'Responsive Design'],
-    github: 'https://github.com/Dharaneeshsl/Responsive-Resume',
-    demo: ''
-  },
-  {
-    title: 'Hotel Menu Page',
-    description: 'A simple and visually appealing hotel menu page for customers, built with HTML, CSS, and JavaScript. Allows users to browse menu items in a clean, responsive layout. Easy to customize for any restaurant or cafe.',
-    tech: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
-    github: 'https://github.com/Dharaneeshsl/HOTEL-MENU-PAGE',
-    demo: ''
-  },
-  {
-    title: 'Restaurant Website',
-    description: 'A simple and elegant restaurant website built with HTML and CSS. Features a clean menu layout, attractive design, and responsive structure for a seamless user experience on any device.',
-    tech: ['HTML5', 'CSS3', 'Responsive Design'],
-    github: 'https://github.com/Dharaneeshsl/RESTAURANT',
-    demo: ''
-  },
-  {
-    title: 'Snake Game',
-    description: 'A classic Snake game implemented in Python. Features smooth gameplay, increasing difficulty, and a simple user interface. Great for learning game logic and Python basics.',
-    tech: ['Python'],
-    github: 'https://github.com/Dharaneeshsl/SNAKE-GAME',
-    demo: ''
-  },
-  {
-    title: 'Simple E-Commerce for Local Brand',
-    description: 'A lightweight e-commerce platform designed for local brands. Built with JavaScript, HTML, and CSS, it offers essential features for product listing, shopping cart, and order management. Easy to customize and deploy for small businesses.',
-    tech: ['JavaScript', 'HTML5', 'CSS3'],
-    github: 'https://github.com/Dharaneeshsl/Simple-E-Commerce-for-local-Brand',
-    demo: ''
-  },
-  {
-    title: 'Dice Game',
-    description: 'A fun and interactive dice game built with HTML, CSS, and JavaScript. Features a simple UI, random dice rolls, and engaging gameplay for all ages.',
-    tech: ['HTML5', 'CSS3', 'JavaScript'],
-    github: 'https://github.com/Dharaneeshsl/DICE-GAME',
-    demo: ''
-  },
-  {
-    title: 'My First Portfolio',
-    description: 'A simple personal portfolio website built with HTML. Includes sections for contact, hobbies, and a showcase of personal projects. Great for beginners to learn the basics of web development and personal branding.',
-    tech: ['HTML5'],
-    github: 'https://github.com/Dharaneeshsl/MY-FIRST-PORTFOLIO',
-    demo: ''
-  },
-  {
-    title: 'CRUD Application',
-    description: 'A basic CRUD (Create, Read, Update, Delete) application demonstrating fundamental operations for managing data. Built for learning and practicing essential web development concepts.',
-    tech: ['JavaScript', 'HTML5', 'CSS3'],
-    github: 'https://github.com/Dharaneeshsl/CRUD',
-    demo: ''
-  },
-  {
-    title: 'Modern Blog Project',
-    description: 'A beautiful, responsive, and feature-rich blog application built with HTML5, CSS3, and JavaScript. Features include dynamic content, search functionality, user authentication, category system, and a modern UI/UX with smooth animations.',
-    tech: ['HTML5', 'CSS3', 'JavaScript'],
-    github: 'https://github.com/Dharaneeshsl/BLOG-PROJECT',
-    demo: ''
+    description: "A modern full-stack delivery management platform using Flutter and Node.js. Features real-time tracking, Google Maps API integration, Firebase integration, push notifications, and order management.",
+    badge: "Full Stack • Maps API • Real-time",
+    techStack: ["Google Maps API", "Flutter", "Node.js", "Express", "Firebase", "MongoDB"],
+    github: "https://github.com/Dharaneeshsl",
+    live: "",
   }
 ];
 
@@ -206,7 +184,12 @@ export default function Projects() {
                 </div>
                 <p className="text-gray-400 mb-6 leading-relaxed text-sm line-clamp-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
+                  {project.badge && (
+                    <span className="bg-white/5 border border-white/10 text-xs text-gray-300 px-3 py-1 rounded-full font-medium">
+                      {project.badge}
+                    </span>
+                  )}
+                  {project.techStack.map((tech) => (
                     <span key={tech} className="bg-white/5 border border-white/10 text-xs text-gray-300 px-3 py-1 rounded-full font-medium">
                       {tech}
                     </span>
@@ -215,17 +198,19 @@ export default function Projects() {
               </div>
 
               <div className="px-8 pb-8 pt-4 border-t border-white/5 flex gap-4">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white hover:text-accent font-semibold transition-colors text-sm"
-                >
-                  <FaGithub className="text-lg" /> Code
-                </a>
-                {project.demo && (
+                {project.github && (
                   <a
-                    href={project.demo}
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-white hover:text-accent font-semibold transition-colors text-sm"
+                  >
+                    <FaGithub className="text-lg" /> Code
+                  </a>
+                )}
+                {project.live && (
+                  <a
+                    href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-white hover:text-accent font-semibold transition-colors text-sm"

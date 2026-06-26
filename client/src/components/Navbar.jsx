@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -87,7 +88,7 @@ export default function Navbar() {
             aria-controls="mobile-menu"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
-            {menuOpen ? '✕' : '☰'}
+            {menuOpen ? <FaTimes aria-hidden="true" /> : <FaBars aria-hidden="true" />}
           </button>
         </div>
 

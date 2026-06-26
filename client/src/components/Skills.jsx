@@ -117,6 +117,30 @@ export default function Skills() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12"
+        >
+          <div className="bg-zinc-900/50 backdrop-blur-sm border border-white/5 rounded-2xl p-4 hover:border-accent/30 transition-colors duration-300">
+            <img
+              src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dharaneeshsl&layout=compact&theme=dark&hide_border=true&bg_color=0f0f0f&title_color=00ffe7&text_color=cccccc"
+              alt="Dharaneesh S L top GitHub languages"
+              className="w-full"
+              loading="lazy"
+            />
+          </div>
+          <div className="bg-zinc-900/50 backdrop-blur-sm border border-white/5 rounded-2xl p-4 hover:border-accent/30 transition-colors duration-300">
+            <img
+              src="https://github-readme-streak-stats.herokuapp.com?user=Dharaneeshsl&theme=dark&hide_border=true&background=0f0f0f&ring=00ffe7&fire=00ffe7&currStreakLabel=00ffe7"
+              alt="Dharaneesh S L GitHub contribution streak"
+              className="w-full"
+              loading="lazy"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

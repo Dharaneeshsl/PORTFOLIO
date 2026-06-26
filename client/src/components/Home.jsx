@@ -39,7 +39,11 @@ export default function Home() {
         Dharaneesh <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-500">S L</span>
       </motion.h1>
 
-      <motion.h2 variants={itemVariants} className="text-2xl md:text-3xl font-bold text-gray-400 mb-8 max-w-3xl">
+      <motion.p variants={itemVariants} className="text-lg md:text-xl text-accent font-semibold mb-4">
+        8.79 CGPA <span className="text-gray-500">|</span> 3 Internships <span className="text-gray-500">|</span> 10+ Hackathons
+      </motion.p>
+
+      <motion.h2 variants={itemVariants} className="text-base sm:text-2xl md:text-3xl font-bold text-gray-400 mb-8 max-w-3xl whitespace-nowrap">
         Full Stack Developer <span className="text-accent">|</span> UI/UX Designer <span className="text-accent">|</span> AI & ML Enthusiast
       </motion.h2>
 
@@ -59,6 +63,21 @@ export default function Home() {
           className="border border-accent text-accent px-8 py-4 rounded-full font-bold text-lg hover:bg-accent/10 hover:shadow-[0_0_20px_rgba(0,255,231,0.2)] hover:scale-105 transition-all duration-300 backdrop-blur-sm"
         >
           Let's Talk
+        </a>
+        <a
+          href="https://github.com/Dharaneeshsl"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="border border-accent text-accent px-8 py-4 rounded-full font-bold text-lg hover:bg-accent/10 hover:shadow-[0_0_20px_rgba(0,255,231,0.2)] hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+        >
+          GitHub
+        </a>
+        <a
+          href="/resume.pdf"
+          download
+          className="border border-accent text-accent px-8 py-4 rounded-full font-bold text-lg hover:bg-accent/10 hover:shadow-[0_0_20px_rgba(0,255,231,0.2)] hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+        >
+          Download Resume ↓
         </a>
       </motion.div>
     </motion.div>

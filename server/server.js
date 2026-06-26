@@ -66,6 +66,23 @@ app.get('/api/github/:username', async (req, res) => {
 });
 
 app.get('/api/admin/messages', (req, res) => {
+    const adminToken = process.env.ADMIN_TOKEN;
+    const providedToken = req.get('x-admin-token');
+
+    if (!adminToken) {
+        return res.status(503).json({
+            status: 'error',
+            message: 'Admin access is not configured'
+        });
+    }
+
+    if (providedToken !== adminToken) {
+        return res.status(401).json({
+            status: 'error',
+            message: 'Unauthorized'
+        });
+    }
+
     res.json(messages);
 });
 
@@ -92,11 +109,12 @@ app.post('/api/send_mail', contactLimiter, async (req, res) => {
     }
 
     messages.push({
-        id: Date.now(),
-        sender,
+        _id: Date.now().toString(),
+        name: subject?.replace(/^Portfolio Contact from\s*/i, '') || 'Portfolio visitor',
+        email: sender,
         subject,
         message,
-        timestamp: new Date()
+        date: new Date().toISOString()
     });
 
     const mailOptions = {
