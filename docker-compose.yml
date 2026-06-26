@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   server:
     build: ./server
@@ -7,10 +5,11 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - PORT=5000
-      - NODE_ENV=production
+      PORT: 5000
+      NODE_ENV: production
     env_file:
-      - ./server/.env
+      - path: ./server/.env
+        required: false
     restart: always
     networks:
       - portfolio-network

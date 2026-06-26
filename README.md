@@ -8,7 +8,13 @@ Containerized full-stack portfolio with a React client and Express server.
 
 ## Run With Docker Compose
 
-Create `server/.env` first, then run:
+Create `server/.env` from the committed example when you want contact email/admin features locally:
+
+```bash
+cp server/.env.example server/.env
+```
+
+Then run:
 
 ```bash
 docker compose up --build
@@ -36,3 +42,11 @@ PORT=5000
 ```
 
 `RECIPIENT_EMAIL` is optional. If it is not set, mail is sent to `MAIL_USER`.
+
+## Hosting Notes
+
+- Client build command: `npm ci && npm run build`
+- Client publish/output directory: `client/dist`
+- If your frontend and backend are hosted separately, set `VITE_API_BASE_URL` on the client host to the backend API base URL, for example `https://your-api-host.com/api`.
+- Server start command: `npm start`
+- Server root directory: `server`
